@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>صبا و شروین</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="border">
+				<h1>صبا و شروین</h1>
+				<p>با دنیایی از شادی سرآغاز پیوندی جاودانه را جشن می‌گیریم</p>
+
+				<h2>جمعه 17 تیر 1401</h2>
+				<div id="timer"></div>
+				<p>خوشحالیم که در زیباترین روز زندگی‌مان در کنار ما هستید</p>
+				<p class="times">مراسم عقد: <b>18:00 تا 19:30</b></p>
+				<p class="times">جشن: <b>19:30 تا پاسی از شب</b></p>
+				<div class="address">
+					<address>جاجرود، خیابان تختی، باغ تالار پدیده</address>
+					<div class="maps">
+						<a
+							class="map-item neshan"
+							href="https://neshan.org/maps/@35.752162,51.738673,19.7z,0.0p/places/%D8%AA%D8%AE%D8%AA%DB%8C"
+							target="_blank"
+							rel="noopener noreferrer"
+							>مسیریابی با نشان</a
+						>
+						<a
+							class="map-item balad"
+							href="https://balad.ir/p/%D8%A8%D8%A7%D8%BA-%D8%AA%D8%A7%D9%84%D8%A7%D8%B1-%D9%BE%D8%AF%DB%8C%D8%AF%D9%87_ceremonial-services-2mS4VQLBT71BmN#15/35.75278/51.74295"
+							target="_blank"
+							rel="noopener noreferrer"
+							>مسیریابی با بلد</a
+						>
+						<a
+							class="map-item google"
+							href="https://www.google.com/maps/place/Padideh+garden/@35.7519416,51.7386585,15z/data=!4m2!3m1!1s0x0:0x79be83d1e1480f1e?sa=X&ved=2ahUKEwiK_uCAmrf4AhWN7aQKHV-ZCNMQ_BJ6BAhcEAU"
+							target="_blank"
+							rel="noopener noreferrer"
+							>مسیریابی با گوگل</a
+						>
+						<a
+							class="map-item waze"
+							href="https://www.waze.com/en-AU/live-map/directions/ir/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D8%AA%D9%87%D8%B1%D8%A7%D9%86/%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%B5%D9%86%D8%B9%D8%AA%DB%8C-%DA%A9%D9%85%D8%B1%D8%AF/padideh-garden?to=place.ChIJa9Vz5erfkT8RHg9I4dGDvnk"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							مسیریابی با ویز</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		function updateTimer() {
+			const FUTURE = Date.parse('jul 08, 2022 18:00:00');
+			const NOW = new Date();
+			const DIFF = FUTURE - NOW;
+			const DAYS = Math.floor(DIFF / (1000 * 60 * 60 * 24));
+			const HOURS = Math.floor(DIFF / (1000 * 60 * 60));
+			const MINS = Math.floor(DIFF / (1000 * 60));
+			const SECS = Math.floor(DIFF / 1000);
+			const D = DAYS;
+			const H = HOURS - DAYS * 24;
+			const M = MINS - HOURS * 60;
+			const S = SECS - MINS * 60;
+			document.getElementById('timer').innerHTML =
+				'<div>' +
+				D +
+				'<span>روز</span></div>' +
+				'<div>' +
+				H +
+				'<span>ساعت</span></div>' +
+				'<div>' +
+				M +
+				'<span>دقیقه</span></div>' +
+				'<div>' +
+				S +
+				'<span>ثانیه</span></div>';
+		}
+		setInterval('updateTimer()', 1000);
+	</script>
+</html>
